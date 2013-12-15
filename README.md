@@ -1,4 +1,4 @@
-ZFManual4iPhone
+ZFManual4iphone
 ===============
 
-Test github
+Test Git
