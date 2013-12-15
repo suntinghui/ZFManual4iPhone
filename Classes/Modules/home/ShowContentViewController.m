@@ -321,6 +321,12 @@ static bool hasTapped = false;
 {
     NSLog(@"----");
     
+    //如果搜索栏存在 则隐藏搜索栏
+    if ([self.view.subviews containsObject:self.mySearchBar])
+    {
+        [self.mySearchBar removeFromSuperview];
+    }
+    
     hasTapped = true;
     [UIView animateWithDuration:0.5 animations:^{
         
@@ -371,13 +377,19 @@ static bool hasTapped = false;
 }
 -(void)searchAction:(id)sender//搜索
 {
-    [self.navigationController setNavigationBarHidden:YES];
-    _mySearchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0.0,20, 320, 44.0)];
-	_mySearchBar.delegate = self;
-	_mySearchBar.showsCancelButton = YES;
-	[self.view addSubview: _mySearchBar];
-    
-    _webView.frame = CGRectMake(0, 64, 320, ScreenHeight-20-44-44);
+    if ([self.view.subviews containsObject:self.mySearchBar])
+    {
+        [self.mySearchBar removeFromSuperview];
+    }
+    else
+    {
+        _mySearchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0.0,0, 320, 44.0)];
+        _mySearchBar.delegate = self;
+        _mySearchBar.showsCancelButton = YES;
+        [self.view addSubview: _mySearchBar];
+
+    }
+   
     
 }
 -(void)collectAction:(id)sender//收藏
@@ -409,6 +421,11 @@ static bool hasTapped = false;
     }
 }
 
+/**
+ *  屏幕亮度调整
+ *
+ *  @param sender
+ */
 -(void)lightAction:(id)sender
 {
     //the controller we want to present as a popover
@@ -423,10 +440,13 @@ static bool hasTapped = false;
     {
         popover.contentSize = CGSizeMake(200, 120);
     }
-    popover.arrowDirection = FPPopoverArrowDirectionAny;
+    popover.arrowDirection = FPPopoverArrowDirectionUp;
     
     //sender is the UIButton view
-    [popover presentPopoverFromView:sender];
+    //[popover presentPopoverFromView:sender];
+    
+    [popover presentPopoverFromView:self.toolBar];
+
 }
 
 
@@ -443,10 +463,12 @@ static bool hasTapped = false;
     {
         popover.contentSize = CGSizeMake(200, 120);
     }
-    popover.arrowDirection = FPPopoverArrowDirectionAny;
+    popover.arrowDirection = FPPopoverArrowDirectionUp;
     
     //sender is the UIButton view
-    [popover presentPopoverFromView:sender];
+    //[popover presentPopoverFromView:sender];
+    
+    [popover presentPopoverFromView:self.toolBar];
     
 }
 

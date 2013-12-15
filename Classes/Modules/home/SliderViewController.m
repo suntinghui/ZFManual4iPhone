@@ -44,14 +44,18 @@
     
     if (_webView==nil) {
         NSLog(@"111");
+        _Slide.maximumValue = 1.0f;
+        _Slide.minimumValue =0.0f;
+        _Slide.value = 0.5f;
         [_Slide addTarget:self action:@selector(SlideChange) forControlEvents:UIControlEventValueChanged];
     }else{
            NSLog(@"222");
+        _Slide.maximumValue = 300.0f;
+        _Slide.minimumValue =20.0f;
+        _Slide.value = 100.0f;
         [_Slide addTarget:self action:@selector(fontSlideChange) forControlEvents:UIControlEventValueChanged];
     }
-    _Slide.maximumValue = 1.0f;
-    _Slide.minimumValue =0.0f;
-    _Slide.value = 1.0f;
+
     [self.view addSubview:_Slide];
 }
 -(void)SlideChange
