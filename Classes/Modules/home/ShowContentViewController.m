@@ -47,7 +47,7 @@ static bool hasTapped = false;
 -(id) initWithFileName:(NSString *) fileName
 {
     if (self = [super init]) {
-        _fileName = fileName;
+        self.fileName = [NSString stringWithFormat:@"%@",fileName];
         _link = nil;
         _htmlStr = nil;
     }
@@ -406,6 +406,7 @@ static bool hasTapped = false;
 -(void)collectAction:(id)sender//收藏
 {
     ContentModel *cmodel = [[ContentModel alloc]init];
+    NSLog(@"self.fileName %@",self.fileName);
     cmodel.url = _fileName;
     NSArray *dicArray = [_fileName componentsSeparatedByString:@"/"];
     NSString *fname = dicArray[dicArray.count-1];
@@ -419,7 +420,8 @@ static bool hasTapped = false;
          [cdb deleteCollect:cmodel];
     }else{
         [cdb insertCollect:cmodel];
-         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"收藏成功" message:@"收藏成功！" delegate:self cancelButtonTitle:Nil otherButtonTitles:nil ,nil];
+         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"收藏成功" message:@"收藏成功！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil ,nil];
+        [alert show];
     }
 }
 

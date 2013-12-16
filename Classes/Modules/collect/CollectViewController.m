@@ -70,12 +70,20 @@
     _mytableView.layer.cornerRadius = 8.0;
     [self setExtraCellLineHidden:_mytableView];
     [self.view addSubview:_mytableView];
+   
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
     [self refresh];
 }
 -(void)refresh{
     CollectDBHelper *cdb = [[CollectDBHelper alloc]init];
     _myarray = [cdb queryAll];
     NSLog(@"myarray %d",[_myarray count]);
+    [self.mytableView reloadData];
 }
 
 

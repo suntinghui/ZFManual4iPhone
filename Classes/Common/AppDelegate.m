@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "AlixPayResult.h"
+#import "BaseDBHelper.h"
 
 @implementation AppDelegate
 
@@ -24,6 +25,9 @@
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    
+    [BaseDBHelper createDataBase];
 
     return YES;
 }
