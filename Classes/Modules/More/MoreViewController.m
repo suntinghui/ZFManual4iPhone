@@ -140,9 +140,6 @@
         }
         case 2:
         {
-//            ShareViewController *sc = [[ShareViewController alloc]init];
-//            [self.navigationController pushViewController:sc animated:NO];
-            
             // Do any additional setup after loading the view, typically from a nib.
             ZS_Share  *share = [[[ZS_Share alloc] init] autorelease];
             //    ZS_ShareResult * result = [share shareContent:nil withShareBy:NSClassFromString(@"ZS_ShareByMail") withShareDelegate:self];
@@ -156,8 +153,6 @@
             }else{
                 NSLog(@"------成功------");
             }
-            
-       //     [self.scrollVC.tabbarScroll setHidden:NO];
             break;
         }
         case 3:

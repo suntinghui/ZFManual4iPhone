@@ -53,4 +53,11 @@
         <method>POST</method>
     </request>
     
+    <!--版本控制-->
+    <request>
+        <requestId>VERSION</requestId>
+        <url>/user.action?m=frontUpdateVersion</url>
+        <method>POST</method>
+    </request>
+    
 </root>

@@ -15,5 +15,4 @@
 #define BUYLIST                   @"BUYLIST"
 #define MULU                      @"MULU"
 #define YLLS                      @"YLLS"
-
-
+#define VERSION                   @"VERSION"

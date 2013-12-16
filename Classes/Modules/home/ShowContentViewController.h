@@ -44,11 +44,14 @@
 @property (nonatomic, strong) UIBarButtonItem *searchButtonItem;
 @property (nonatomic, strong) UIBarButtonItem *shareButtonItem;
 
-@property (nonatomic, strong)UIPopoverController *fontPopoverController;
+@property (nonatomic, strong) UIPopoverController *fontPopoverController;
 @property (nonatomic, strong) UITapGestureRecognizer *recognizer;
 
 @property (nonatomic, strong) UISlider* lightSlide;
 @property (nonatomic, strong) UISlider* fontSlide;
+
+@property (nonatomic,strong) UIButton *fontButton;
+@property (nonatomic,strong) UIButton *lightButton;
 
 -(id) initWithFileName:(NSString *) fileName;
 -(id) initWithUrl:(NSString *) url;

@@ -151,7 +151,11 @@
     priceLabel.textAlignment = UITextAlignmentCenter;
     priceLabel.font = [UIFont boldSystemFontOfSize:15];
     priceLabel.textColor = [UIColor blackColor];
-    priceLabel.text = [NSString stringWithFormat:@"￥%@元",book.price];
+    if ([book.price intValue] == 0){
+        priceLabel.text = @"免费";
+    }else{
+        priceLabel.text = [NSString stringWithFormat:@"￥%@元",book.price];
+    }
     [cell.contentView addSubview:priceLabel];
     
     if ([book.state isEqualToString:@"1"]) {
@@ -192,7 +196,7 @@
 {
     BookModel *book = self.myarray[indexPath.row];
     __block NSArray *bookarray = nil;
-    if ([book.state isEqualToString:@"1"])//查看
+    if ([book.state isEqualToString:@"1"]||[book.price intValue] == 0)//查看
     {
         AFHTTPRequestOperation *operation = [[Transfer sharedTransfer]
                                              sendRequestWithRequestDic:@{@"bookname":[book.bookname stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]}

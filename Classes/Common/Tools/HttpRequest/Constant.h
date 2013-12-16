@@ -14,6 +14,8 @@
 
 #define UserDefaults [NSUserDefaults standardUserDefaults]
 
+#define kVERSION                        @"3" // 当前程序的版本号，以此值与服务器进行比对，确定版本更新
+
 #define kREMEBERPWD                     @"remeberPWD"
 #define kAUTOLOGIN                      @"autoLogin"
 #define KUSERNAME                       @"userName"
@@ -24,6 +26,8 @@
 #define kCOUNT_GRZX                     @"count_GRZX"
 #define kCOUNT_BCAR                     @"count_BCAR"
 #define kCOUNT_MORE                     @"count_MORE"
+#define kURL                            @"http://220.231.55.105" //下载地址
+
 
 //支付宝信息
 // 合作身份者ID，以2088开头由16位纯数字组成的字符串

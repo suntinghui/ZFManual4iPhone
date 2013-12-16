@@ -38,7 +38,7 @@
 		CEAAB40B185B6AFF009BF697 /* BookMuLuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEAAB30F185B6AFE009BF697 /* BookMuLuViewController.m */; };
 		CEAAB40C185B6AFF009BF697 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEAAB311185B6AFE009BF697 /* HomeViewController.m */; };
 		CEAAB40D185B6AFF009BF697 /* PayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEAAB313185B6AFE009BF697 /* PayViewController.m */; };
-		CEAAB40E185B6AFF009BF697 /* ShowContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEAAB315185B6AFE009BF697 /* ShowContentViewController.m */; };
+		CEAAB40E185B6AFF009BF697 /* ShowContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEAAB315185B6AFE009BF697 /* ShowContentViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CEAAB40F185B6AFF009BF697 /* SliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEAAB317185B6AFE009BF697 /* SliderViewController.m */; };
 		CEAAB410185B6AFF009BF697 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEAAB31A185B6AFE009BF697 /* LoginViewController.m */; };
 		CEAAB411185B6AFF009BF697 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEAAB31C185B6AFE009BF697 /* RegisterViewController.m */; };

@@ -39,7 +39,8 @@
 @synthesize recognizer = _recognizer;
 @synthesize mySearchBar = _mySearchBar;
 
-
+@synthesize fontButton = _fontButton;
+@synthesize lightButton = _lightButton;
 
 static bool hasTapped = false;
 
@@ -105,6 +106,13 @@ static bool hasTapped = false;
     [self.webView addGestureRecognizer:self.recognizer];
     self.recognizer.delegate = self;
     
+    _fontButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_fontButton setFrame:CGRectMake(self.view.frame.size.width/5/2,self.view.frame.size.height-44, self.view.frame.size.width/5, 44)];
+    [self.view addSubview:_fontButton];
+    _lightButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [_lightButton setFrame:CGRectMake(self.view.frame.size.width/5*2-self.view.frame.size.width/10,self.view.frame.size.height-44, self.view.frame.size.width/5, 44)];
+    [self.view addSubview:_lightButton];
+    
     
     [self initToolBar];
     
@@ -161,10 +169,15 @@ static bool hasTapped = false;
     UIBarButtonItem *flexibleSpaceButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
                                                                                              target:nil
                                                                                              action:nil];
+    
+//    [_fontButton setImage:[UIImage imageNamed:@"font_n.png"] forState:UIControlStateNormal];
+//    [_fontButton addTarget:self action:@selector(fontsizeAction:) forControlEvents:UIControlEventTouchUpInside];
+    
     _fontButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"font_n.png"]
-                                                       style:UIBarButtonItemStylePlain
-                                                      target:self
-                                                      action:@selector(fontsizeAction:)];
+                                                                            style:UIBarButtonItemStylePlain
+                                                                            target:self
+                                                                            action:@selector(fontsizeAction:)];
+    
     _lightButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"light_n.png"]
                                                         style:UIBarButtonItemStylePlain
                                                        target:self
@@ -271,9 +284,9 @@ static bool hasTapped = false;
     
     
     // 测试发现，当为EXCEL文件时（即扩展名为xls或xlsx),则一直在屏幕上显示加载不消失，故采用如下特殊处理之。
-    if (self.fileName && [[self.fileName pathExtension] rangeOfString:@"xls"].location != NSNotFound) {
-        return ;
-    }
+//    if (self.fileName && [[self.fileName pathExtension] rangeOfString:@"xls"].location != NSNotFound) {
+//        return ;
+//    }
     
     [self showWaiting];
 }
@@ -389,8 +402,6 @@ static bool hasTapped = false;
         [self.view addSubview: _mySearchBar];
 
     }
-   
-    
 }
 -(void)collectAction:(id)sender//收藏
 {
@@ -405,18 +416,9 @@ static bool hasTapped = false;
     
     if ([cdb findCollect:cmodel]) {
        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"取消收藏" message:@"您确定要取消收藏吗？" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"取消" ,nil];
-        [_collectButtonItem initWithImage:[UIImage imageNamed:@"collect_n.png"]
-                                                             style:UIBarButtonItemStylePlain
-                                                             target:self
-                                                             action:@selector(collectAction:)];
-        
          [cdb deleteCollect:cmodel];
     }else{
         [cdb insertCollect:cmodel];
-        [_collectButtonItem initWithImage:[UIImage imageNamed:@"collect_n.png"]
-                                    style:UIBarButtonItemStylePlain
-                                   target:self
-                                   action:@selector(collectAction:)];
          UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"收藏成功" message:@"收藏成功！" delegate:self cancelButtonTitle:Nil otherButtonTitles:nil ,nil];
     }
 }
@@ -445,8 +447,7 @@ static bool hasTapped = false;
     //sender is the UIButton view
     //[popover presentPopoverFromView:sender];
     
-    [popover presentPopoverFromView:self.toolBar];
-
+     [popover presentPopoverFromView:_lightButton];
 }
 
 
@@ -467,8 +468,7 @@ static bool hasTapped = false;
     
     //sender is the UIButton view
     //[popover presentPopoverFromView:sender];
-    
-    [popover presentPopoverFromView:self.toolBar];
+    [popover presentPopoverFromView:_fontButton];
     
 }
 
@@ -487,5 +487,30 @@ static bool hasTapped = false;
 	[_mySearchBar resignFirstResponder];
 }
 
+-(void) shareBy:(ZS_ShareBy *) shareBy withResult:(ZS_ShareResult *) result
+{
+    NSLog(@"%@", result.shRetInfo);
+    
+    NSDictionary * dic = (NSDictionary *) result.shRetInfo;
+    
+    for (NSString * key in [dic allKeys])
+    {
+        NSLog(@"%@", [dic  objectForKey:key]);
+        
+    }
+    [shareController dismissViewControllerAnimated:YES completion:^{
+        shareController = nil;
+        
+    }];
+    [self.navigationController.view setFrame:CGRectMake(0, 0, 320, [[UIScreen mainScreen] bounds].size.height-70)];
+}
+
+-(void) shareBy:(ZS_ShareBy *)shareBy withRootOject:(id)controller
+{
+    shareController = [controller retain];
+    [self presentViewController:controller animated:YES completion:^{
+        
+    }];
+}
 
 @end

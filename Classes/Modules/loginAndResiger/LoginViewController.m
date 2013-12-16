@@ -40,7 +40,7 @@
 
 @synthesize  isRember = _isRember;
 @synthesize  isAutoLogin = _isAutoLogin;
-
+static bool checkUpate = false;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -171,6 +171,43 @@
     [super viewWillAppear:animated];
     
     [self.navigationController setNavigationBarHidden:YES animated:NO];
+}
+-(void) viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self becomeFirstResponder];
+    if (!checkUpate) {
+        [self checkUpdate];
+        checkUpate = true;
+    }
+}
+- (void) checkUpdate
+{
+    AFHTTPRequestOperation *operation = [[Transfer sharedTransfer]
+                                         TransferWithRequestDic:@{@"version":kVERSION}
+                                         requesId:VERSION
+                                         prompt:@"version"
+                                         replaceId:nil
+                                         success:^(id obj) {
+                                             if([[obj objectForKey:@"rs"]intValue] == 0){//更新
+                                                 // 启动浏览器去更新程序
+                                                 // 注：这种机制也没有完全要求用户一定要更新程序，完全可以从浏览器切换回项目再登录。
+                                                 [[UIApplication sharedApplication] openURL:[NSURL URLWithString:kURL]];
+                                                 
+                                             }else if([[obj objectForKey:@"rs"]intValue] == 1){
+                                                 // 无需更新
+                                               //  [[LKTipCenter defaultCenter] postDownTipWithMessage:@"您的程序已是最新版本" time:2];
+                                                   [SVProgressHUD showSuccessWithStatus:@"已是最新版本"];
+                                                 if ([UserDefaults boolForKey:kAUTOLOGIN]) {
+                                                     [self loginAction:nil];
+                                                 }
+                                             }
+                                         } failure:^(NSString *errMsg) {
+                                             
+                                         }];
+    [[Transfer sharedTransfer]doQueueByTogether:[NSArray arrayWithObjects:operation, nil] prompt:@"正在检查更新" completeBlock:^(NSArray *operations) {
+        
+    }];    
 }
 
 

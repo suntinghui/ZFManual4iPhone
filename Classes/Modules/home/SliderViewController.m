@@ -43,21 +43,18 @@
     _Slide = [[UISlider alloc] initWithFrame:CGRectMake(5, 10, 170, 20)];
     
     if (_webView==nil) {
-        NSLog(@"111");
         self.title = @"屏幕亮度调整";
         _Slide.maximumValue = 1.0f;
         _Slide.minimumValue =0.0f;
         _Slide.value = 0.5f;
         [_Slide addTarget:self action:@selector(SlideChange) forControlEvents:UIControlEventValueChanged];
     }else{
-           NSLog(@"222");
         self.title = @"字体大小调整";
         _Slide.maximumValue = 300.0f;
         _Slide.minimumValue =20.0f;
         _Slide.value = 100.0f;
         [_Slide addTarget:self action:@selector(fontSlideChange) forControlEvents:UIControlEventValueChanged];
     }
-
     [self.view addSubview:_Slide];
 }
 -(void)SlideChange
