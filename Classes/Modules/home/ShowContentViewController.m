@@ -416,11 +416,12 @@ static bool hasTapped = false;
     CollectDBHelper *cdb = [[CollectDBHelper alloc]init];
     
     if ([cdb findCollect:cmodel]) {
-       UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"取消收藏" message:@"您确定要取消收藏吗？" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:@"取消" ,nil];
+       UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"取消收藏" message:@"您确定要取消收藏吗？" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:@"取消" ,nil];
          [cdb deleteCollect:cmodel];
+        [alert show];
     }else{
         [cdb insertCollect:cmodel];
-         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"收藏成功" message:@"收藏成功！" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil ,nil];
+         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"收藏成功" message:nil delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil ,nil];
         [alert show];
     }
 }
