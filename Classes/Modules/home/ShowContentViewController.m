@@ -323,9 +323,9 @@ static bool hasTapped = false;
 #pragma mark--UIAletViewDelegate
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex == 0) {
-        [self.navigationController popViewControllerAnimated:YES];
-    }
+//    if (buttonIndex == 0) {
+//        [self.navigationController popViewControllerAnimated:YES];
+//    }
 }
 
 #pragma mark-
