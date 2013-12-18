@@ -11,6 +11,21 @@
 		2CE035C7185D898500178F8B /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE5DB82185B7B5F00D67478 /* SBJsonBase.m */; };
 		2CE035C8185D898500178F8B /* SBJsonWriter.h in Sources */ = {isa = PBXBuildFile; fileRef = CEE5DB85185B7B5F00D67478 /* SBJsonWriter.h */; };
 		2CE035C9185D8A0500178F8B /* SearchWebView.js in Resources */ = {isa = PBXBuildFile; fileRef = 2CE035C4185D872600178F8B /* SearchWebView.js */; };
+		6CE4D9CB1861FEBF00024FE9 /* MyProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE4D9CA1861FEBF00024FE9 /* MyProgressView.m */; };
+		6CE4D9D8186200FA00024FE9 /* CALayer+ModalAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE4D9CE186200FA00024FE9 /* CALayer+ModalAlert.m */; };
+		6CE4D9D9186200FA00024FE9 /* LMAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE4D9D0186200FA00024FE9 /* LMAlertView.m */; };
+		6CE4D9DA186200FA00024FE9 /* LMEmbeddedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE4D9D2186200FA00024FE9 /* LMEmbeddedViewController.m */; };
+		6CE4D9DB186200FA00024FE9 /* LMModalSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE4D9D4186200FA00024FE9 /* LMModalSegue.m */; };
+		6CE4D9DC186200FA00024FE9 /* LMNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE4D9D6186200FA00024FE9 /* LMNavigationBar.m */; };
+		6CE4D9DD186200FA00024FE9 /* Radial.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CE4D9D7186200FA00024FE9 /* Radial.png */; };
+		6CE4D9F01862012A00024FE9 /* RBBAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE4D9E11862012A00024FE9 /* RBBAnimation.m */; };
+		6CE4D9F11862012A00024FE9 /* RBBBlockBasedArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE4D9E31862012A00024FE9 /* RBBBlockBasedArray.m */; };
+		6CE4D9F21862012A00024FE9 /* RBBCubicBezier.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE4D9E51862012A00024FE9 /* RBBCubicBezier.m */; };
+		6CE4D9F31862012A00024FE9 /* RBBCustomAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE4D9E71862012A00024FE9 /* RBBCustomAnimation.m */; };
+		6CE4D9F41862012A00024FE9 /* RBBEasingFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE4D9E91862012A00024FE9 /* RBBEasingFunction.m */; };
+		6CE4D9F51862012A00024FE9 /* RBBLinearInterpolation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE4D9EB1862012A00024FE9 /* RBBLinearInterpolation.m */; };
+		6CE4D9F61862012A00024FE9 /* RBBSpringAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE4D9ED1862012A00024FE9 /* RBBSpringAnimation.m */; };
+		6CE4D9F71862012A00024FE9 /* RBBTweenAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE4D9EF1862012A00024FE9 /* RBBTweenAnimation.m */; };
 		CE734471185B917500D71199 /* TBXML+Compression.m in Sources */ = {isa = PBXBuildFile; fileRef = CE73446C185B917500D71199 /* TBXML+Compression.m */; };
 		CE734472185B917500D71199 /* TBXML+HTTP.m in Sources */ = {isa = PBXBuildFile; fileRef = CE73446E185B917500D71199 /* TBXML+HTTP.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		CE734473185B917500D71199 /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = CE734470185B917500D71199 /* TBXML.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -192,6 +207,36 @@
 
 /* Begin PBXFileReference section */
 		2CE035C4185D872600178F8B /* SearchWebView.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = SearchWebView.js; sourceTree = "<group>"; };
+		6CE4D9C91861FEBF00024FE9 /* MyProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProgressView.h; sourceTree = "<group>"; };
+		6CE4D9CA1861FEBF00024FE9 /* MyProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProgressView.m; sourceTree = "<group>"; };
+		6CE4D9CD186200FA00024FE9 /* CALayer+ModalAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+ModalAlert.h"; sourceTree = "<group>"; };
+		6CE4D9CE186200FA00024FE9 /* CALayer+ModalAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+ModalAlert.m"; sourceTree = "<group>"; };
+		6CE4D9CF186200FA00024FE9 /* LMAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMAlertView.h; sourceTree = "<group>"; };
+		6CE4D9D0186200FA00024FE9 /* LMAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMAlertView.m; sourceTree = "<group>"; };
+		6CE4D9D1186200FA00024FE9 /* LMEmbeddedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMEmbeddedViewController.h; sourceTree = "<group>"; };
+		6CE4D9D2186200FA00024FE9 /* LMEmbeddedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMEmbeddedViewController.m; sourceTree = "<group>"; };
+		6CE4D9D3186200FA00024FE9 /* LMModalSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMModalSegue.h; sourceTree = "<group>"; };
+		6CE4D9D4186200FA00024FE9 /* LMModalSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMModalSegue.m; sourceTree = "<group>"; };
+		6CE4D9D5186200FA00024FE9 /* LMNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LMNavigationBar.h; sourceTree = "<group>"; };
+		6CE4D9D6186200FA00024FE9 /* LMNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LMNavigationBar.m; sourceTree = "<group>"; };
+		6CE4D9D7186200FA00024FE9 /* Radial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Radial.png; sourceTree = "<group>"; };
+		6CE4D9DF1862012A00024FE9 /* RBBAnimation-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RBBAnimation-Prefix.pch"; sourceTree = "<group>"; };
+		6CE4D9E01862012A00024FE9 /* RBBAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBBAnimation.h; sourceTree = "<group>"; };
+		6CE4D9E11862012A00024FE9 /* RBBAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBBAnimation.m; sourceTree = "<group>"; };
+		6CE4D9E21862012A00024FE9 /* RBBBlockBasedArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBBBlockBasedArray.h; sourceTree = "<group>"; };
+		6CE4D9E31862012A00024FE9 /* RBBBlockBasedArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBBBlockBasedArray.m; sourceTree = "<group>"; };
+		6CE4D9E41862012A00024FE9 /* RBBCubicBezier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBBCubicBezier.h; sourceTree = "<group>"; };
+		6CE4D9E51862012A00024FE9 /* RBBCubicBezier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBBCubicBezier.m; sourceTree = "<group>"; };
+		6CE4D9E61862012A00024FE9 /* RBBCustomAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBBCustomAnimation.h; sourceTree = "<group>"; };
+		6CE4D9E71862012A00024FE9 /* RBBCustomAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBBCustomAnimation.m; sourceTree = "<group>"; };
+		6CE4D9E81862012A00024FE9 /* RBBEasingFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBBEasingFunction.h; sourceTree = "<group>"; };
+		6CE4D9E91862012A00024FE9 /* RBBEasingFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBBEasingFunction.m; sourceTree = "<group>"; };
+		6CE4D9EA1862012A00024FE9 /* RBBLinearInterpolation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBBLinearInterpolation.h; sourceTree = "<group>"; };
+		6CE4D9EB1862012A00024FE9 /* RBBLinearInterpolation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBBLinearInterpolation.m; sourceTree = "<group>"; };
+		6CE4D9EC1862012A00024FE9 /* RBBSpringAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBBSpringAnimation.h; sourceTree = "<group>"; };
+		6CE4D9ED1862012A00024FE9 /* RBBSpringAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBBSpringAnimation.m; sourceTree = "<group>"; };
+		6CE4D9EE1862012A00024FE9 /* RBBTweenAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBBTweenAnimation.h; sourceTree = "<group>"; };
+		6CE4D9EF1862012A00024FE9 /* RBBTweenAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBBTweenAnimation.m; sourceTree = "<group>"; };
 		CE73446B185B917500D71199 /* TBXML+Compression.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TBXML+Compression.h"; sourceTree = "<group>"; };
 		CE73446C185B917500D71199 /* TBXML+Compression.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TBXML+Compression.m"; sourceTree = "<group>"; };
 		CE73446D185B917500D71199 /* TBXML+HTTP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TBXML+HTTP.h"; sourceTree = "<group>"; };
@@ -493,6 +538,57 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6CE4D9C81861FEBF00024FE9 /* MyProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				6CE4D9C91861FEBF00024FE9 /* MyProgressView.h */,
+				6CE4D9CA1861FEBF00024FE9 /* MyProgressView.m */,
+			);
+			path = MyProgressView;
+			sourceTree = "<group>";
+		};
+		6CE4D9CC186200FA00024FE9 /* LMAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				6CE4D9CD186200FA00024FE9 /* CALayer+ModalAlert.h */,
+				6CE4D9CE186200FA00024FE9 /* CALayer+ModalAlert.m */,
+				6CE4D9CF186200FA00024FE9 /* LMAlertView.h */,
+				6CE4D9D0186200FA00024FE9 /* LMAlertView.m */,
+				6CE4D9D1186200FA00024FE9 /* LMEmbeddedViewController.h */,
+				6CE4D9D2186200FA00024FE9 /* LMEmbeddedViewController.m */,
+				6CE4D9D3186200FA00024FE9 /* LMModalSegue.h */,
+				6CE4D9D4186200FA00024FE9 /* LMModalSegue.m */,
+				6CE4D9D5186200FA00024FE9 /* LMNavigationBar.h */,
+				6CE4D9D6186200FA00024FE9 /* LMNavigationBar.m */,
+				6CE4D9D7186200FA00024FE9 /* Radial.png */,
+			);
+			path = LMAlertView;
+			sourceTree = "<group>";
+		};
+		6CE4D9DE1862012A00024FE9 /* RBBAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				6CE4D9DF1862012A00024FE9 /* RBBAnimation-Prefix.pch */,
+				6CE4D9E01862012A00024FE9 /* RBBAnimation.h */,
+				6CE4D9E11862012A00024FE9 /* RBBAnimation.m */,
+				6CE4D9E21862012A00024FE9 /* RBBBlockBasedArray.h */,
+				6CE4D9E31862012A00024FE9 /* RBBBlockBasedArray.m */,
+				6CE4D9E41862012A00024FE9 /* RBBCubicBezier.h */,
+				6CE4D9E51862012A00024FE9 /* RBBCubicBezier.m */,
+				6CE4D9E61862012A00024FE9 /* RBBCustomAnimation.h */,
+				6CE4D9E71862012A00024FE9 /* RBBCustomAnimation.m */,
+				6CE4D9E81862012A00024FE9 /* RBBEasingFunction.h */,
+				6CE4D9E91862012A00024FE9 /* RBBEasingFunction.m */,
+				6CE4D9EA1862012A00024FE9 /* RBBLinearInterpolation.h */,
+				6CE4D9EB1862012A00024FE9 /* RBBLinearInterpolation.m */,
+				6CE4D9EC1862012A00024FE9 /* RBBSpringAnimation.h */,
+				6CE4D9ED1862012A00024FE9 /* RBBSpringAnimation.m */,
+				6CE4D9EE1862012A00024FE9 /* RBBTweenAnimation.h */,
+				6CE4D9EF1862012A00024FE9 /* RBBTweenAnimation.m */,
+			);
+			path = RBBAnimation;
+			sourceTree = "<group>";
+		};
 		CE73446A185B917500D71199 /* TBXML */ = {
 			isa = PBXGroup;
 			children = (
@@ -863,6 +959,9 @@
 		CEE5DB5A185B7B5F00D67478 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				6CE4D9DE1862012A00024FE9 /* RBBAnimation */,
+				6CE4D9CC186200FA00024FE9 /* LMAlertView */,
+				6CE4D9C81861FEBF00024FE9 /* MyProgressView */,
 				CE73446A185B917500D71199 /* TBXML */,
 				CEE5DB5B185B7B5F00D67478 /* AFNetworking */,
 				CEE5DB6F185B7B5F00D67478 /* alipay */,
@@ -1340,6 +1439,7 @@
 				CEAAB47F185B6AFF009BF697 /* select_button_s.png in Resources */,
 				CEAAB2C1185B67BC009BF697 /* InfoPlist.strings in Resources */,
 				CEAAB491185B6B72009BF697 /* Default.png in Resources */,
+				6CE4D9DD186200FA00024FE9 /* Radial.png in Resources */,
 				CEAAB451185B6AFF009BF697 /* bookicon.png in Resources */,
 				CEAAB461185B6AFF009BF697 /* header.png in Resources */,
 				CEAAB483185B6AFF009BF697 /* setting_4.png in Resources */,
@@ -1387,20 +1487,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CE035C7185D898500178F8B /* SBJsonBase.m in Sources */,
+				6CE4D9F41862012A00024FE9 /* RBBEasingFunction.m in Sources */,
 				2CE035C8185D898500178F8B /* SBJsonWriter.h in Sources */,
+				6CE4D9F71862012A00024FE9 /* RBBTweenAnimation.m in Sources */,
 				2CE035C6185D88D200178F8B /* SearchWebView.js in Sources */,
 				CE734471185B917500D71199 /* TBXML+Compression.m in Sources */,
+				6CE4D9DC186200FA00024FE9 /* LMNavigationBar.m in Sources */,
 				CEAAB40A185B6AFF009BF697 /* FileManagerUtil.m in Sources */,
 				CEE5DC0A185B7B6000D67478 /* FPTouchView.m in Sources */,
+				6CE4D9F61862012A00024FE9 /* RBBSpringAnimation.m in Sources */,
+				6CE4D9F11862012A00024FE9 /* RBBBlockBasedArray.m in Sources */,
 				CEE5DC17185B7B6000D67478 /* ZS_ShareByRenrenFriends.m in Sources */,
 				CED775A5185B767E001C1460 /* Transfer+ParseXML.m in Sources */,
 				CEE5DC08185B7B6000D67478 /* FPPopoverController.m in Sources */,
+				6CE4D9CB1861FEBF00024FE9 /* MyProgressView.m in Sources */,
+				6CE4D9DB186200FA00024FE9 /* LMModalSegue.m in Sources */,
 				CEAAB413185B6AFF009BF697 /* HelpViewController.m in Sources */,
 				CEE5DC16185B7B6000D67478 /* ZS_ShareByMessage.m in Sources */,
 				CEE5DC1F185B7B6000D67478 /* SVProgressHUD.m in Sources */,
 				CEAAB414185B6AFF009BF697 /* MoreViewController.m in Sources */,
 				CEE5DC11185B7B6000D67478 /* ZS_ShareContent.m in Sources */,
 				CED775A4185B767E001C1460 /* AppDataCenter.m in Sources */,
+				6CE4D9F51862012A00024FE9 /* RBBLinearInterpolation.m in Sources */,
 				CEAAB40B185B6AFF009BF697 /* BookMuLuViewController.m in Sources */,
 				CEE5DC0E185B7B6000D67478 /* NSObject+Hash.m in Sources */,
 				CEE5DBF1185B7B6000D67478 /* AFPropertyListRequestOperation.m in Sources */,
@@ -1410,6 +1518,7 @@
 				CEE5DBFC185B7B6000D67478 /* NSString+SBJSON.m in Sources */,
 				CED775B8185B7767001C1460 /* AppDelegate.m in Sources */,
 				CEAAB403185B6AFF009BF697 /* BookModel.m in Sources */,
+				6CE4D9F21862012A00024FE9 /* RBBCubicBezier.m in Sources */,
 				CEE5DC13185B7B6000D67478 /* ZS_ShareStack.m in Sources */,
 				CEE5DC0B185B7B6000D67478 /* JSBadgeView.m in Sources */,
 				CE734472185B917500D71199 /* TBXML+HTTP.m in Sources */,
@@ -1420,6 +1529,7 @@
 				CED775A6185B767E001C1460 /* Transfer.m in Sources */,
 				CEAAB40F185B6AFF009BF697 /* SliderViewController.m in Sources */,
 				CEE5DBEF185B7B6000D67478 /* AFJSONRequestOperation.m in Sources */,
+				6CE4D9DA186200FA00024FE9 /* LMEmbeddedViewController.m in Sources */,
 				CEAAB40D185B6AFF009BF697 /* PayViewController.m in Sources */,
 				CEAAB416185B6AFF009BF697 /* FullTextSearchViewController.m in Sources */,
 				CEAAB405185B6AFF009BF697 /* RequestModel.m in Sources */,
@@ -1435,8 +1545,10 @@
 				CEE5DC00185B7B6000D67478 /* SBJsonWriter.m in Sources */,
 				CEE5DC0D185B7B6000D67478 /* Reachability.m in Sources */,
 				CEE5DBEE185B7B6000D67478 /* AFImageRequestOperation.m in Sources */,
+				6CE4D9F31862012A00024FE9 /* RBBCustomAnimation.m in Sources */,
 				CEE5DC18185B7B6000D67478 /* ZS_ShareBySinaWeibo.m in Sources */,
 				CEAAB402185B6AFF009BF697 /* TheProjectCell.m in Sources */,
+				6CE4D9D9186200FA00024FE9 /* LMAlertView.m in Sources */,
 				CEE5DBFD185B7B6000D67478 /* SBJSON.m in Sources */,
 				CEE5DBF4185B7B6000D67478 /* UIImageView+AFNetworking.m in Sources */,
 				CEAAB407185B6AFF009BF697 /* UserModel.m in Sources */,
@@ -1450,7 +1562,9 @@
 				CEE5DC05185B7B6000D67478 /* FMDatabasePool.m in Sources */,
 				CEE5DC07185B7B6000D67478 /* FMResultSet.m in Sources */,
 				CED775B5185B76E6001C1460 /* TestViewController.m in Sources */,
+				6CE4D9D8186200FA00024FE9 /* CALayer+ModalAlert.m in Sources */,
 				CEAAB417185B6AFF009BF697 /* SearchWebView.m in Sources */,
+				6CE4D9F01862012A00024FE9 /* RBBAnimation.m in Sources */,
 				CEAAB2C3185B67BC009BF697 /* main.m in Sources */,
 				CEE5DBF0185B7B6000D67478 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				CEE5DC06185B7B6000D67478 /* FMDatabaseQueue.m in Sources */,

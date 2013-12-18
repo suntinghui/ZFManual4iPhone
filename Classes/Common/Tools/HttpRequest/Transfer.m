@@ -12,6 +12,7 @@
 #import "Reachability.h"
 #import "FileManagerUtil.h"
 #import "MProgressAlertView.h"
+#import "MyProgressView.h"
 #import "BookModel.h"
 
 #define KB      (1024.0)
@@ -354,69 +355,137 @@ static bool alertShowing = false;
     }
    
     //显示进度条
-    __block MProgressAlertView *progressView = [[MProgressAlertView alloc]initWithTitle:@"正在下载"
-                                                                        message:nil
-                                                                       delegate:self
-                                                              cancelButtonTitle:@"取消下载"
-                                                              otherButtonTitles:nil, nil];
-    progressView.tag = 100;
-    [progressView show];
-    
-    __block float percent = 0;
-    __block int j = 0;
-    __block BOOL issuccess = YES;
-    
-    NSFileManager* fileMgr = [NSFileManager defaultManager];
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    [fileMgr createDirectoryAtPath:[documentsDirectory stringByAppendingPathComponent:name] withIntermediateDirectories:YES attributes:nil error:nil];
-
-    NSLog(@"arrycount %d  bookname %@",array.count,name);
-    for (int i = 0;i< array.count;i++) {
-        NSString *path = [NSString stringWithFormat:@"%@/zjzfWebApp/upload/%@/%@",DEFAULTHOST,name,array[i]];
-        NSLog(@"arry %@",array[i]);
-        //保存文件
-        NSString *fileName = [NSString stringWithFormat:@"/%@/%@",name,array[i]];
-        NSString *dicname = [NSString stringWithFormat:@"%@",name];
-        if ([array[i] rangeOfString:@"/"].location != NSNotFound) {
-            NSArray *dicArray = [array[i] componentsSeparatedByString:@"/"];
-            for (int j = 0; j<dicArray.count-1; j++) {
-                dicname = [NSString stringWithFormat:@"%@/%@",dicname,dicArray[j]];
-                NSLog(@"dicname %@",dicname);
-                if (![FileManagerUtil fileExistWithName:dicname]) {
-                    [fileMgr createDirectoryAtPath:[documentsDirectory stringByAppendingPathComponent:dicname] withIntermediateDirectories:YES attributes:nil error:nil];
+    if (IS_IOS_7) {
+        __block MyProgressView *progressView = [[MyProgressView alloc]initWithTitle:@"正在下载"
+                                                                                    message:nil
+                                                                                   delegate:self
+                                                                          cancelButtonTitle:@"取消下载"
+                                                                          otherButtonTitles:nil, nil];
+        progressView.tag = 100;
+        [progressView show];
+        
+        __block float percent = 0;
+        __block int j = 0;
+        __block BOOL issuccess = YES;
+        
+        NSFileManager* fileMgr = [NSFileManager defaultManager];
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *documentsDirectory = [paths objectAtIndex:0];
+        [fileMgr createDirectoryAtPath:[documentsDirectory stringByAppendingPathComponent:name] withIntermediateDirectories:YES attributes:nil error:nil];
+        
+        NSLog(@"arrycount %d  bookname %@",array.count,name);
+        for (int i = 0;i< array.count;i++) {
+            NSString *path = [NSString stringWithFormat:@"%@/zjzfWebApp/upload/%@/%@",DEFAULTHOST,name,array[i]];
+            NSLog(@"arry %@",array[i]);
+            //保存文件
+            NSString *fileName = [NSString stringWithFormat:@"/%@/%@",name,array[i]];
+            NSString *dicname = [NSString stringWithFormat:@"%@",name];
+            if ([array[i] rangeOfString:@"/"].location != NSNotFound) {
+                NSArray *dicArray = [array[i] componentsSeparatedByString:@"/"];
+                for (int j = 0; j<dicArray.count-1; j++) {
+                    dicname = [NSString stringWithFormat:@"%@/%@",dicname,dicArray[j]];
+                    NSLog(@"dicname %@",dicname);
+                    if (![FileManagerUtil fileExistWithName:dicname]) {
+                        [fileMgr createDirectoryAtPath:[documentsDirectory stringByAppendingPathComponent:dicname] withIntermediateDirectories:YES attributes:nil error:nil];
+                    }
                 }
             }
-        }
-        [self downloadFileWithName:fileName link:path viewController:self success:^(id obj) {
-            //更新进度条
+            [self downloadFileWithName:fileName link:path viewController:self success:^(id obj) {
+                //更新进度条
                 percent = ++j ;
                 NSLog(@"$$$$$ %.0f %d",percent,j);
                 progressView.progressView.progress = percent/[array count];
                 progressView.progressLabel.text = [NSString stringWithFormat:@"%.0f / %d",percent,[array count]];
-            if (percent == [array count]) {
-                NSLog(@"downloadComplete!");
+                if (percent == [array count]) {
+                    NSLog(@"downloadComplete!");
+                    [SVProgressHUD dismiss];
+                    [progressView dismiss];
+                }
+            } failure:^(NSString *errMsg) {
+                NSLog(@"failllll");
+                
+                if (!alertShowing) {
+                    _alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"文件下载失败。" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+                    alertShowing = YES;
+                    [self.alert setTag:101];
+                    
+                    [progressView dismiss];
+                    
+                    [self.alert show];
+                }
+                
+                [[Transfer sharedClient].operationQueue cancelAllOperations];
+                [[Transfer sharedClient] cancelAllHTTPOperationsWithMethod:@"POST" path:DEFAULTHOST];
                 [SVProgressHUD dismiss];
-                [progressView dismissWithClickedButtonIndex:0 animated:YES];
+                [FileManagerUtil deleteFileWithName:name];
+            }];
+        }
+        
+    } else {
+        __block MProgressAlertView *progressView = [[MProgressAlertView alloc]initWithTitle:@"正在下载"
+                                                                                    message:nil
+                                                                                   delegate:self
+                                                                          cancelButtonTitle:@"取消下载"
+                                                                          otherButtonTitles:nil, nil];
+        progressView.tag = 100;
+        [progressView show];
+        
+        __block float percent = 0;
+        __block int j = 0;
+        __block BOOL issuccess = YES;
+        
+        NSFileManager* fileMgr = [NSFileManager defaultManager];
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *documentsDirectory = [paths objectAtIndex:0];
+        [fileMgr createDirectoryAtPath:[documentsDirectory stringByAppendingPathComponent:name] withIntermediateDirectories:YES attributes:nil error:nil];
+        
+        NSLog(@"arrycount %d  bookname %@",array.count,name);
+        for (int i = 0;i< array.count;i++) {
+            NSString *path = [NSString stringWithFormat:@"%@/zjzfWebApp/upload/%@/%@",DEFAULTHOST,name,array[i]];
+            NSLog(@"arry %@",array[i]);
+            //保存文件
+            NSString *fileName = [NSString stringWithFormat:@"/%@/%@",name,array[i]];
+            NSString *dicname = [NSString stringWithFormat:@"%@",name];
+            if ([array[i] rangeOfString:@"/"].location != NSNotFound) {
+                NSArray *dicArray = [array[i] componentsSeparatedByString:@"/"];
+                for (int j = 0; j<dicArray.count-1; j++) {
+                    dicname = [NSString stringWithFormat:@"%@/%@",dicname,dicArray[j]];
+                    NSLog(@"dicname %@",dicname);
+                    if (![FileManagerUtil fileExistWithName:dicname]) {
+                        [fileMgr createDirectoryAtPath:[documentsDirectory stringByAppendingPathComponent:dicname] withIntermediateDirectories:YES attributes:nil error:nil];
+                    }
+                }
             }
-        } failure:^(NSString *errMsg) {
-            NSLog(@"failllll");
-            
-            if (!alertShowing) {
-                _alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"文件下载失败。" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-                alertShowing = YES;
-                [self.alert setTag:101];
+            [self downloadFileWithName:fileName link:path viewController:self success:^(id obj) {
+                //更新进度条
+                percent = ++j ;
+                NSLog(@"$$$$$ %.0f %d",percent,j);
+                progressView.progressView.progress = percent/[array count];
+                progressView.progressLabel.text = [NSString stringWithFormat:@"%.0f / %d",percent,[array count]];
+                if (percent == [array count]) {
+                    NSLog(@"downloadComplete!");
+                    [SVProgressHUD dismiss];
+                    [progressView dismissWithClickedButtonIndex:0 animated:YES];
+                }
+            } failure:^(NSString *errMsg) {
+                NSLog(@"failllll");
                 
-                [progressView dismissWithClickedButtonIndex:0 animated:NO];
+                if (!alertShowing) {
+                    _alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"文件下载失败。" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+                    alertShowing = YES;
+                    [self.alert setTag:101];
+                    
+                    [progressView dismissWithClickedButtonIndex:0 animated:NO];
+                    
+                    [self.alert show];
+                }
                 
-                [self.alert show];
-            }
-            
-            [[Transfer sharedClient].operationQueue cancelAllOperations];
-            [[Transfer sharedClient] cancelAllHTTPOperationsWithMethod:@"POST" path:DEFAULTHOST];
-            [SVProgressHUD dismiss];
-            [FileManagerUtil deleteFileWithName:name];
-        }];
+                [[Transfer sharedClient].operationQueue cancelAllOperations];
+                [[Transfer sharedClient] cancelAllHTTPOperationsWithMethod:@"POST" path:DEFAULTHOST];
+                [SVProgressHUD dismiss];
+                [FileManagerUtil deleteFileWithName:name];
+            }];
+        }
     }
    
 }
@@ -480,6 +549,19 @@ static bool alertShowing = false;
 {
     if (alertView.tag == 101) {
         alertShowing = false;
+    } else if (alertView.tag == 100) {
+        if (buttonIndex == 0) {
+            [self.downloadOperation cancel];
+            [SVProgressHUD dismiss];
+            
+            // 文件下载失败直接删除缓存文件
+            [FileManagerUtil deleteFileWithName:self.downloadFileName];
+            
+            totalSize = nil;
+            if (!IS_IOS_7) {
+                [alertView dismissWithClickedButtonIndex:0 animated:YES];
+            }
+        }
     }
 }
 

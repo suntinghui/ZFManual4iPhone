@@ -14,6 +14,8 @@
 
 #define UserDefaults [NSUserDefaults standardUserDefaults]
 
+#define LKCOLOR  ([UIColor colorWithRed:46/225.0f green:137/225.0f blue:224/225.0f alpha:1.0f])
+
 #define kVERSION                        @"3" // 当前程序的版本号，以此值与服务器进行比对，确定版本更新
 
 #define kREMEBERPWD                     @"remeberPWD"
