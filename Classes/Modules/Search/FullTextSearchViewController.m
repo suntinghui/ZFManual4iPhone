@@ -33,19 +33,20 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.navigationItem.title = @"搜索";
     _myarray = [[NSMutableArray array]init];
     self.hasSureButton = NO;
     self.navigationItem.hidesBackButton = YES;
-    [self.navigationController setNavigationBarHidden:YES];
+    //[self.navigationController setNavigationBarHidden:YES];
    // [self.view setFrame:CGRectMake(0, 20, 320, [[UIScreen mainScreen] bounds].size.height)];
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"reg_bg"]]];
     
-    _mySearchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0,20, 320, 44.0)];
+    _mySearchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0,0, 320, 44.0)];
 	_mySearchBar.delegate = self;
 	_mySearchBar.showsCancelButton = YES;
 	[self.view addSubview: _mySearchBar];
     
-    _mytableView = [[UITableView alloc]initWithFrame:CGRectMake(5, 70, 310, self.tableViewHeight_1) style:UITableViewStylePlain];
+    _mytableView = [[UITableView alloc]initWithFrame:CGRectMake(5, 50, 310, ScreenHeight-44-44-49-10-20) style:UITableViewStylePlain];
     _mytableView.delegate = self;
     _mytableView.dataSource = self;
     [_mytableView setBackgroundColor:[UIColor clearColor]];
