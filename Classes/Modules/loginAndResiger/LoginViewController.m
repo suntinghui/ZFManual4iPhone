@@ -270,11 +270,6 @@ static bool checkUpate = false;
     [personalCenterController.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"scroll_icon_s_3"] withFinishedUnselectedImage:[UIImage imageNamed:@"scroll_icon_n_3"]];
     personalCenterController.tabBarItem.imageInsets = UIEdgeInsetsMake(5, 3, 7, 7);
     
-    //    TestViewController *testController = [[TestViewController alloc]init];
-    //    UINavigationController *colectNav = [[UINavigationController alloc]initWithRootViewController:testController];
-    //    testController.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"我的收藏" image:nil tag:0];
-    //    [testController.tabBarItem setFinishedSelectedImage:[UIImage imageNamed:@"scroll_icon_s_4"] withFinishedUnselectedImage:[UIImage imageNamed:@"scroll_icon_n_4"]];
-    //     testController.tabBarItem.imageInsets = UIEdgeInsetsMake(5, 3, 7, 3);
     
     CollectViewController *testController = [[CollectViewController alloc]init];
     UINavigationController *colectNav = [[UINavigationController alloc]initWithRootViewController:testController];

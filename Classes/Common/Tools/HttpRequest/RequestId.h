@@ -16,3 +16,5 @@
 #define MULU                      @"MULU"
 #define YLLS                      @"YLLS"
 #define VERSION                   @"VERSION"
+#define FULLSEARCH                @"FULLSEARCH"
+#define ISBUY                     @"ISBUY"

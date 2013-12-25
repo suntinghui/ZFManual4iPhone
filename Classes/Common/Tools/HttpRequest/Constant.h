@@ -61,7 +61,8 @@
 
 // 注意此值并不是真正的联网地址，真正的地址在登录成功后返回，存于 kREALHOST 中
 #define DEFAULTHOST                     @"http://220.231.55.105"
-
+//#define DEFAULTHOST                     @"http://192.168.100.6:8080"
+//#define DEFAULTHOST                     @"http://192.168.100.4:8080"
 
 #define iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
 

@@ -11,6 +11,7 @@
 		2CE035C7185D898500178F8B /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE5DB82185B7B5F00D67478 /* SBJsonBase.m */; };
 		2CE035C8185D898500178F8B /* SBJsonWriter.h in Sources */ = {isa = PBXBuildFile; fileRef = CEE5DB85185B7B5F00D67478 /* SBJsonWriter.h */; };
 		2CE035C9185D8A0500178F8B /* SearchWebView.js in Resources */ = {isa = PBXBuildFile; fileRef = 2CE035C4185D872600178F8B /* SearchWebView.js */; };
+		2CE036DD186A86C200178F8B /* FileModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE036DC186A86C200178F8B /* FileModel.m */; };
 		6CE4D9CB1861FEBF00024FE9 /* MyProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE4D9CA1861FEBF00024FE9 /* MyProgressView.m */; };
 		6CE4D9D8186200FA00024FE9 /* CALayer+ModalAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE4D9CE186200FA00024FE9 /* CALayer+ModalAlert.m */; };
 		6CE4D9D9186200FA00024FE9 /* LMAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CE4D9D0186200FA00024FE9 /* LMAlertView.m */; };
@@ -207,6 +208,8 @@
 
 /* Begin PBXFileReference section */
 		2CE035C4185D872600178F8B /* SearchWebView.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = SearchWebView.js; sourceTree = "<group>"; };
+		2CE036DB186A86C200178F8B /* FileModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileModel.h; sourceTree = "<group>"; };
+		2CE036DC186A86C200178F8B /* FileModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileModel.m; sourceTree = "<group>"; };
 		6CE4D9C91861FEBF00024FE9 /* MyProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProgressView.h; sourceTree = "<group>"; };
 		6CE4D9CA1861FEBF00024FE9 /* MyProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProgressView.m; sourceTree = "<group>"; };
 		6CE4D9CD186200FA00024FE9 /* CALayer+ModalAlert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+ModalAlert.h"; sourceTree = "<group>"; };
@@ -719,6 +722,8 @@
 				CEAAB300185B6AFE009BF697 /* TreeViewNode.m */,
 				CEAAB301185B6AFE009BF697 /* UserModel.h */,
 				CEAAB302185B6AFE009BF697 /* UserModel.m */,
+				2CE036DB186A86C200178F8B /* FileModel.h */,
+				2CE036DC186A86C200178F8B /* FileModel.m */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -1549,6 +1554,7 @@
 				CEE5DC18185B7B6000D67478 /* ZS_ShareBySinaWeibo.m in Sources */,
 				CEAAB402185B6AFF009BF697 /* TheProjectCell.m in Sources */,
 				6CE4D9D9186200FA00024FE9 /* LMAlertView.m in Sources */,
+				2CE036DD186A86C200178F8B /* FileModel.m in Sources */,
 				CEE5DBFD185B7B6000D67478 /* SBJSON.m in Sources */,
 				CEE5DBF4185B7B6000D67478 /* UIImageView+AFNetworking.m in Sources */,
 				CEAAB407185B6AFF009BF697 /* UserModel.m in Sources */,

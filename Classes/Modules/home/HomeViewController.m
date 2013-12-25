@@ -209,14 +209,12 @@
                                                                                         success:^(id obj) {
                                                                                             NSLog(@"success");
                                                                                             
-                                                                                            BookMuLuViewController *bookMulu = [[BookMuLuViewController alloc]initWithBookName:book.bookname];
-                                                                                         //   bookMulu.title = @"图书列表";
-                                                                                            
-                                                                                            [self.navigationController pushViewController:bookMulu animated:YES];
+                                                                                             BookMuLuViewController *bookMulu = [[BookMuLuViewController alloc]initWithBookName:book.bookname];                             [self.navigationController pushViewController:bookMulu animated:YES];
                                                                                             
                                                                                         } failure:^(NSString *errMsg) {
                                                                                             
                                                                                         }];
+                                                 
                                                  
                                              } failure:^(NSString *errMsg) {
                                                  

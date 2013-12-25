@@ -14,6 +14,7 @@
 #import "MProgressAlertView.h"
 #import "MyProgressView.h"
 #import "BookModel.h"
+#import "BookMuLuViewController.h"
 
 #define KB      (1024.0)
 #define MB      (1024.0 * 1024.0)
@@ -400,6 +401,9 @@ static bool alertShowing = false;
                     NSLog(@"downloadComplete!");
                     [SVProgressHUD dismiss];
                     [progressView dismiss];
+               //      BookMuLuViewController *bookMulu = [[BookMuLuViewController alloc]initWithBookName:name];
+                     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"文件下载完成！" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+                    [alert show];
                 }
             } failure:^(NSString *errMsg) {
                 NSLog(@"failllll");
@@ -466,6 +470,8 @@ static bool alertShowing = false;
                     NSLog(@"downloadComplete!");
                     [SVProgressHUD dismiss];
                     [progressView dismissWithClickedButtonIndex:0 animated:YES];
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"文件下载完成！" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+                    [alert show];
                 }
             } failure:^(NSString *errMsg) {
                 NSLog(@"failllll");

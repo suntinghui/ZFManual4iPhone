@@ -60,4 +60,17 @@
         <method>POST</method>
     </request>
     
+    <!--全文检索-->
+    <request>
+        <requestId>FULLSEARCH</requestId>
+        <url>/buylog.action?m=frontSearchKey</url>
+        <method>POST</method>
+    </request>
+    
+    <!--全文检索点击列表看是否购买-->
+    <request>
+        <requestId>ISBUY</requestId>
+        <url>/buylog.action?m=frontIfBuy</url>
+        <method>POST</method>
+    </request>
 </root>
